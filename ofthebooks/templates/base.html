@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/readable/bootstrap.min.css" type="text/css" />
+	{% block head %}{% endblock %}
+</head>
+<body class="container">
+	<header class="row page-header">
+		<h1 class="col-sm-8"><a href="{% url 'index' %}">Of the Books</a></h1>
+		<h1 class="col-sm-2 hidden-xs text-center"><a href="/about"><small>About</small></a></h1>
+		<h1 class="col-sm-2 hidden-xs text-center"><a href="/contact"><small>Contact</small></a></h1>
+	</header>
+	{% block body %}{% endblock %}
+</body>
+</html>

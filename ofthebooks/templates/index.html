@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block head %}
+	<title>Of the Books - Reviews for critically acclaimed books</title>
+	<link rel="stylesheet" href="{% static "index.css" %}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+	<nav>
+	{% for review in reviews %}
+		{% if forloop.counter0|divisibleby:"3" %}<div class="row">{% endif %}
+			<a href="{% url 'review' review.slug %}"><img src="{{ review.amazon_image_url }}" alt="{{ review.title }}" class="col-sm-4" /></a>
+			<div class="visible-xs spacer"></div>
+		{% if forloop.counter|divisibleby:"3" or forloop.last %}</div>
+		<div class="hidden-xs spacer"></div>{% endif %}
+	{% endfor %}
+	</nav>
+{% endblock %}

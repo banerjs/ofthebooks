@@ -1,0 +1,5 @@
+scratch/
+*.pyc
+__pycache__/
+*.sqlite3
+public/

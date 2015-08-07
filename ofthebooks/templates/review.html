@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block head %}
+	<title>Of the Books - {{ review.title }} reviewed</title>
+	<link rel="stylesheet" href="{% static "review.css" %}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+	<div class="col-md-8">
+		<section>
+			<h3>{{ review.title }}<br/><small>{{ review.author }}</small></h3>
+			<h5>Rating: {{ review.rating }}/5</h5>
+		</section>
+		<article>
+			{{ review.review|linebreaks }}
+		</article>
+	</div>
+	<aside class="col-md-4 hidden-sm hidden-xs">
+		<img src="{{ review.amazon_image_url }}" alt="{{ review.title }}" />
+	</aside>
+{% endblock %}
